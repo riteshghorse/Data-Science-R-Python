@@ -27,7 +27,7 @@ This module contains the further data science steps listed below-
 This module contains the text mining approcahes with R.
 It contains the following implementation-
   -Text mining operations
-  -Calculating the tf count(text freuency count)
+  -Calculating the tf count(text frequency count)
   -Generating a word cloud
 
 
@@ -44,4 +44,4 @@ Following visualizations are implemented-
   -Point Plot
 
 Note: All Python notebooks are created on Python3 environment. 
-         : It is better to install anaconda for Python3 and run these codes. 
+    : It is better to install anaconda for Python3 and run these codes. 
