@@ -1,0 +1,98 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+```{r}
+library(tm)
+```
+
+```{r}
+setwd("D:\\SEM-6\\SL6\\part-b\\3\\")
+data <- VCorpus(DirSource("D:\\SEM-6\\SL6\\part-b\\3\\"))
+summary(data)
+```
+
+```{r}
+writeLines(as.character(data[1]))
+```
+
+```{r}
+data <- tm_map(data, removePunctuation)
+writeLines(as.character(data[1]))
+```
+
+```{r}
+data <- tm_map(data, removeNumbers)
+writeLines(as.character(data[1]))
+```
+
+```{r}
+data <- tm_map(data, tolower)
+writeLines(as.character(data[1]))
+```
+
+```{r}
+data <- tm_map(data, removeWords, stopwords("english"))
+writeLines(as.character(data[1]))
+```
+
+```{r}
+data <- tm_map(data, stripWhitespace)
+writeLines(as.character(data[1]))
+```
+
+```{r}
+data <- tm_map(data, stemDocument)
+writeLines(as.character(data[1]))
+```
+
+```{r}
+data <- tm_map(data, PlainTextDocument)
+writeLines(as.character(data[1]))
+```
+
+```{r}
+dtm <- DocumentTermMatrix(data)
+dtm
+```
+
+```{r}
+tdm <- TermDocumentMatrix(data)
+tdm
+```
+
+```{r}
+m = as.matrix(dtm)
+m
+```
+
+```{r}
+freq = colSums(m)
+freq
+```
+
+```{r}
+table(freq)
+```
+
+```{r}
+wf <- data.frame(words=names(freq), freq=freq)
+wf
+```
+```{r}
+freq = colSums(m)
+freq
+```
+
+```{r}
+library(wordcloud)
+```
+
+```{r}
+sort(freq, decreasing = TRUE)
+words = names(freq)
+dark2 = brewer.pal(6, "Dark2")
+wordcloud(words[1:100], freq[1:100], colors = dark2)
+```
+

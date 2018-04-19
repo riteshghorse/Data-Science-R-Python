@@ -1,0 +1,3 @@
+The seminar is about Stock Market Prediction, that is, how the different previous stock market data and web-media sentiments affect the stock value indexes and how they can be used to predict the future stock value indexes. So, this seminar focuses on 3 models- multiple linear regression, support vector machine and fuzzy neural network with different combinations of inputs.
+This seminar will brief the above mentioned models and how they work.
+The accuracy of this models is calculated and compared and the most accurate results will be the nearest value of stock value indexes.
